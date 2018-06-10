@@ -18,7 +18,7 @@ class App extends Component {
   }
 
   getAllPosts() {
-    axios.get(`http://public-api.wordpress.com/rest/v1/sites/indexfinger771404303.wordpress.com/posts`)
+    axios.get(`https://public-api.wordpress.com/rest/v1/sites/indexfinger771404303.wordpress.com/posts`)
       .then((res) => {
         const results = res.data.posts
         const tags = []
@@ -36,7 +36,7 @@ class App extends Component {
 
   filterResults(filter) {
     this.setState({ loading: true })
-    axios.get(`http://public-api.wordpress.com/rest/v1/sites/indexfinger771404303.wordpress.com/posts?tag=` + filter)
+    axios.get(`https://public-api.wordpress.com/rest/v1/sites/indexfinger771404303.wordpress.com/posts?tag=` + filter)
       .then((res) => {
         this.setState({ results: res.data.posts, loading: false })
       })
