@@ -1,28 +1,286 @@
-.App {
-  text-align: center;
+* {
+  background-color: #43858e;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+body {
+  padding: 40px;
+  font-family: 'Montaga', serif;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
+.home {
+  display: flex;
+}
+
+.hamburger {
+  display: none;
+}
+
+.content {
+  width: 90%;
+}
+
+.title {
+  font-family: 'Yatra One', cursive;
+  font-size: 60px;
   color: white;
+  text-align: center;
+  cursor: pointer;
 }
 
-.App-title {
-  font-size: 1.5em;
+.index {
+  margin-top: 40px;
 }
 
-.App-intro {
-  font-size: large;
+.index-tag {
+  cursor: pointer;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.index-tag:hover {
+  text-decoration: underline;
+}
+
+.posts {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.post {
+  width: 20%;
+  padding-left: 30px;
+  padding-bottom: 30px;
+}
+
+.post-image {
+  width: 100%;
+}
+
+.post-tags {
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 12px;
+}
+
+.post-tags-tag {
+  margin-left: 5px;
+  display: flex;
+  cursor: pointer;
+}
+
+.post1, .post2, .post3, .post4, .post5, .post6, .post7  {
+  width: 20%;
+  padding-top: 10px;
+  padding-left: 60px;
+  -webkit-animation-duration: 10s; /* Safari 4.0 - 8.0 */
+  animation-duration: 10s;
+  -webkit-animation-fill-mode: forwards;
+}
+
+.small {
+  width: 20%;
+}
+.medium {
+  width: 40%;
+}
+.large {
+  width: 70%;
+}
+
+.post1 {
+  animation-name: post1;
+  -webkit-animation-name: post1; /* Safari 4.0 - 8.0 */
+}
+
+.post2 {
+  -webkit-animation-name: post2; /* Safari 4.0 - 8.0 */
+  animation-name: post2;
+}
+
+.post3 {
+  -webkit-animation-name: post3; /* Safari 4.0 - 8.0 */
+  animation-name: post3;
+}
+
+.post4 {
+  -webkit-animation-name: post4; /* Safari 4.0 - 8.0 */
+  animation-name: post4;
+}
+.post5 {
+  -webkit-animation-name: post5; /* Safari 4.0 - 8.0 */
+  animation-name: post5;
+}
+.post6 {
+  -webkit-animation-name: post6; /* Safari 4.0 - 8.0 */
+  animation-name: post6;
+}
+.post7 {
+  -webkit-animation-name: post7; /* Safari 4.0 - 8.0 */
+  animation-name: post7;
+}
+
+@media (max-width: 700px) {
+
+  body {
+    padding: 0px;
+  }
+  
+  .index {
+    display: none;
+  }
+
+  .edit-content {
+    width: 90%;
+    padding: 20px;
+  }
+
+  .hamburger {
+    display: inline;
+    margin-left: auto;
+    font-size: 30px;
+    margin-top: 20px;
+  }
+
+  .post1, .post2, .post3, .post4, .post5, .post6, .post7, .small, .medium, .large  {
+    width: 90%;
+    padding-left: 30px;
+    animation: none;
+  }
+
+  .mobile-menu {
+    position: absolute;
+    width: 100%;
+    background-color: white;
+    z-index: 10;
+  }
+
+  .mobile-menu-header {
+    display: flex;
+    background-color: white;
+    justify-content: space-between;
+  }
+
+  .mobile-menu-close {
+    background-color: white;
+    font-size: 25px;
+  }
+
+  .mobile-index-title {
+    background-color: white;
+    font-size: 25px;
+  }
+
+  .mobile-index {
+    padding: 20px;
+    background-color: white;
+  }
+
+  .mobile-index-tag {
+    padding-top: 10px;
+    font-size: 20px;
+    background-color: white;
+  }
+}
+
+@keyframes post1 {
+  0%   {margin-left:200px; margin-top:30px;}
+  25%  { margin-left:205px; margin-top:25px;}
+  50%  { margin-left:210px; margin-top:20px;}
+  75%  { margin-left:215px; margin-top:15px;}
+  100% { margin-left:220px; margin-top:10px;}
+}
+@-webkit-keyframes post1 {
+  0%   {margin-left:200px; margin-top:30px;}
+  25%  { margin-left:205px; margin-top:25px;}
+  50%  { margin-left:210px; margin-top:20px;}
+  75%  { margin-left:215px; margin-top:15px;}
+  100% { margin-left:220px; margin-top:10px;}
+}
+
+@keyframes post2 {
+  0%   {margin-left:100px; margin-top:50px;}
+  25%  { margin-left:105px; margin-top:55px;}
+  50%  { margin-left:110px; margin-top:60px;}
+  75%  { margin-left:115px; margin-top:65px;}
+  100% { margin-left:120px; margin-top:70px;}
+}
+@-webkit-keyframes post2 {
+  0%   {margin-left:100px; margin-top:50px;}
+  25%  { margin-left:105px; margin-top:55px;}
+  50%  { margin-left:110px; margin-top:60px;}
+  75%  { margin-left:115px; margin-top:65px;}
+  100% { margin-left:120px; margin-top:70px;}
+}
+
+@keyframes post3 {
+  0%   {margin-left:0px; margin-top:80px;}
+  25%  { margin-left:5px; margin-top:85px;}
+  50%  { margin-left:10px; margin-top:90px;}
+  75%  { margin-left:15px; margin-top:95px;}
+  100% { margin-left:20px; margin-top:100px;}
+}
+@-webkit-keyframes post3 {
+  0%   {margin-left:0px; margin-top:80px;}
+  25%  { margin-left:5px; margin-top:85px;}
+  50%  { margin-left:10px; margin-top:90px;}
+  75%  { margin-left:15px; margin-top:95px;}
+  100% { margin-left:20px; margin-top:100px;}
+}
+
+@keyframes post4 {
+  0%   {margin-left:30px; margin-top:300px;}
+  25%  { margin-left:25px; margin-top:305px;}
+  50%  { margin-left:20px; margin-top:310px;}
+  75%  { margin-left:15px; margin-top:315px;}
+  100% { margin-left:10px; margin-top:320px;}
+}
+@-webkit-keyframes post4 {
+  0%   {margin-left:30px; margin-top:300px;}
+  25%  { margin-left:25px; margin-top:305px;}
+  50%  { margin-left:20px; margin-top:310px;}
+  75%  { margin-left:15px; margin-top:315px;}
+  100% { margin-left:10px; margin-top:320px;}
+}
+
+@keyframes post5 {
+  0%   {margin-left:400px; margin-top:100px;}
+  25%  { margin-left:395px; margin-top:95px;}
+  50%  { margin-left:390px; margin-top:90px;}
+  75%  { margin-left:385px; margin-top:85px;}
+  100% { margin-left:380px; margin-top:80px;}
+}
+@-webkit-keyframes post5 {
+  0%   {margin-left:400px; margin-top:100px;}
+  25%  { margin-left:395px; margin-top:95px;}
+  50%  { margin-left:390px; margin-top:90px;}
+  75%  { margin-left:385px; margin-top:85px;}
+  100% { margin-left:300px; margin-top:80px;}
+}
+
+@keyframes post6 {
+  0%   {margin-left:200px; margin-top:0px;}
+  25%  { margin-left:205px; margin-top:5px;}
+  50%  { margin-left:210px; margin-top:10px;}
+  75%  { margin-left:215px; margin-top:15px;}
+  100% { margin-left:220px; margin-top:20px;}
+}
+@-webkit-keyframes post6 {
+  0%   {margin-left:200px; margin-top:0px;}
+  25%  { margin-left:205px; margin-top:5px;}
+  50%  { margin-left:210px; margin-top:10px;}
+  75%  { margin-left:215px; margin-top:15px;}
+  100% { margin-left:220px; margin-top:20px;}
+}
+
+@keyframes post7 {
+  0%   {margin-left:80px; margin-top:20px;}
+  25%  { margin-left:75px; margin-top:25px;}
+  50%  { margin-left:70px; margin-top:30px;}
+  75%  { margin-left:65px; margin-top:35px;}
+  100% { margin-left:60px; margin-top:40px;}
+}
+@-webkit-keyframes post7 {
+  0%   {margin-left:80px; margin-top:20px;}
+  25%  { margin-left:75px; margin-top:25px;}
+  50%  { margin-left:70px; margin-top:30px;}
+  75%  { margin-left:65px; margin-top:35px;}
+  100% { margin-left:60px; margin-top:40px;}
 }

@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
-import './App.css';
 import axios from 'axios';
 
-import './App.css';
+import './Home.css';
 
 const styles = ['post1', 'post2', 'post3', 'post4', 'post5', 'post6', 'post7']
 
-class App extends Component {
+class Home extends Component {
   constructor() {
     super()
     this.state = { results: [], loading: true, showMenu: false }
@@ -113,4 +112,4 @@ class App extends Component {
   }
 }
 
-export default App
+export default Home
