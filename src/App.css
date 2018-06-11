@@ -122,7 +122,7 @@ body {
   body {
     padding: 0px;
   }
-  
+
   .index {
     display: none;
   }
@@ -141,6 +141,7 @@ body {
 
   .post1, .post2, .post3, .post4, .post5, .post6, .post7, .small, .medium, .large  {
     width: 90%;
+    padding-bottom: 45px;
     padding-left: 30px;
     animation: none;
   }
