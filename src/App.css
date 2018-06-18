@@ -70,9 +70,11 @@ body {
   width: 20%;
   padding-top: 10px;
   padding-left: 60px;
-  -webkit-animation-duration: 10s; /* Safari 4.0 - 8.0 */
-  animation-duration: 10s;
+  -webkit-animation-duration: 20s; /* Safari 4.0 - 8.0 */
+  animation-duration: 20s;
   -webkit-animation-fill-mode: forwards;
+  animation-timing-function: linear;
+  -webkit-animation-timing-function: linear;
 }
 
 .small {
@@ -182,106 +184,198 @@ body {
 }
 
 @keyframes post1 {
-  0%   {margin-left:200px; margin-top:30px;}
-  25%  { margin-left:205px; margin-top:25px;}
-  50%  { margin-left:210px; margin-top:20px;}
-  75%  { margin-left:215px; margin-top:15px;}
-  100% { margin-left:220px; margin-top:10px;}
+  from {margin-left: 200px; margin-top: 110px}
+  to {margin-left: 250px; margin-top: 130}
+  /* 0%   {margin-left:200px; margin-top:110px;}
+  5%   {margin-left:201px; margin-top:111px;}
+  10%  {margin-left:201px; margin-top:112px;}
+  15%  {margin-left:203px; margin-top:113px;}
+  20%  {margin-left:204px; margin-top:114px;}
+  25%  {margin-left:205px; margin-top:115px;}
+  30%  {margin-left:206px; margin-top:116px;}
+  35%  {margin-left:207px; margin-top:117px;}
+  40%  {margin-left:208px; margin-top:118px;}
+  45%  {margin-left:209px; margin-top:119px;}
+  50%  {margin-left:210px; margin-top:120px;}
+  55%  {margin-left:211px; margin-top:121px;}
+  60%  {margin-left:212px; margin-top:122px;}
+  65%  {margin-left:213px; margin-top:123px;}
+  70%  {margin-left:214px; margin-top:124px;}
+  75%  {margin-left:215px; margin-top:125px;}
+  80%  {margin-left:216px; margin-top:126px;}
+  85%  {margin-left:217px; margin-top:127px;}
+  90%  {margin-left:218px; margin-top:128px;}
+  95%  {margin-left:219px; margin-top:129px;}
+  100% {margin-left:220px; margin-top:130px;} */
 }
 @-webkit-keyframes post1 {
-  0%   {margin-left:200px; margin-top:30px;}
-  25%  { margin-left:205px; margin-top:25px;}
-  50%  { margin-left:210px; margin-top:20px;}
-  75%  { margin-left:215px; margin-top:15px;}
-  100% { margin-left:220px; margin-top:10px;}
+  from {margin-left: 200px; margin-top: 110px}
+  to {margin-left: 250px; margin-top: 130}
+  /* 0%   {margin-left:200px; margin-top:110px;}
+  5%   {margin-left:201px; margin-top:111px;}
+  10%  {margin-left:201px; margin-top:112px;}
+  15%  {margin-left:203px; margin-top:113px;}
+  20%  {margin-left:204px; margin-top:114px;}
+  25%  {margin-left:205px; margin-top:115px;}
+  30%  {margin-left:206px; margin-top:116px;}
+  35%  {margin-left:207px; margin-top:117px;}
+  40%  {margin-left:208px; margin-top:118px;}
+  45%  {margin-left:209px; margin-top:119px;}
+  50%  {margin-left:210px; margin-top:120px;}
+  55%  {margin-left:211px; margin-top:121px;}
+  60%  {margin-left:212px; margin-top:122px;}
+  65%  {margin-left:213px; margin-top:123px;}
+  70%  {margin-left:214px; margin-top:124px;}
+  75%  {margin-left:215px; margin-top:125px;}
+  80%  {margin-left:216px; margin-top:126px;}
+  85%  {margin-left:217px; margin-top:127px;}
+  90%  {margin-left:218px; margin-top:128px;}
+  95%  {margin-left:219px; margin-top:129px;}
+  100% {margin-left:220px; margin-top:130px;} */
 }
 
 @keyframes post2 {
-  0%   {margin-left:100px; margin-top:50px;}
-  25%  { margin-left:105px; margin-top:55px;}
-  50%  { margin-left:110px; margin-top:60px;}
-  75%  { margin-left:115px; margin-top:65px;}
-  100% { margin-left:120px; margin-top:70px;}
+  from {margin-left: 20px; margin-top: 0px}
+  to {margin-left: 40px; margin-top: 20}
+  /* 0%   {margin-left:20px; margin-top:0px;}
+  5%   {margin-left:21px; margin-top:1px;}
+  10%  {margin-left:22px; margin-top:2px;}
+  15%  {margin-left:23px; margin-top:3px;}
+  20%  {margin-left:24px; margin-top:4px;}
+  25%  {margin-left:25px; margin-top:5px;}
+  30%  {margin-left:26px; margin-top:6px;}
+  35%  {margin-left:27px; margin-top:7px;}
+  40%  {margin-left:28px; margin-top:8px;}
+  45%  {margin-left:29px; margin-top:9px;}
+  50%  {margin-left:30px; margin-top:10px;}
+  55%  {margin-left:31px; margin-top:11px;}
+  60%  {margin-left:32px; margin-top:12px;}
+  65%  {margin-left:33px; margin-top:13px;}
+  70%  {margin-left:34px; margin-top:14px;}
+  75%  {margin-left:35px; margin-top:15px;}
+  80%  {margin-left:36px; margin-top:16px;}
+  85%  {margin-left:137px; margin-top:17px;}
+  90%  {margin-left:38px; margin-top:18px;}
+  95%  {margin-left:39px; margin-top:19px;}
+  100% {margin-left:40px; margin-top:20px;} */
 }
 @-webkit-keyframes post2 {
-  0%   {margin-left:100px; margin-top:50px;}
-  25%  { margin-left:105px; margin-top:55px;}
-  50%  { margin-left:110px; margin-top:60px;}
-  75%  { margin-left:115px; margin-top:65px;}
-  100% { margin-left:120px; margin-top:70px;}
+  from {margin-left: 20px; margin-top: 0px}
+  to {margin-left: 40px; margin-top: 20}
+  /* 0%   {margin-left:20px; margin-top:0px;} */
+  /* 5%   {margin-left:21px; margin-top:1px;}
+  10%  {margin-left:22px; margin-top:2px;}
+  15%  {margin-left:23px; margin-top:3px;}
+  20%  {margin-left:24px; margin-top:4px;}
+  25%  {margin-left:25px; margin-top:5px;}
+  30%  {margin-left:26px; margin-top:6px;}
+  35%  {margin-left:27px; margin-top:7px;}
+  40%  {margin-left:28px; margin-top:8px;}
+  45%  {margin-left:29px; margin-top:9px;}
+  50%  {margin-left:30px; margin-top:10px;}
+  55%  {margin-left:31px; margin-top:11px;}
+  60%  {margin-left:32px; margin-top:12px;}
+  65%  {margin-left:33px; margin-top:13px;}
+  70%  {margin-left:34px; margin-top:14px;}
+  75%  {margin-left:35px; margin-top:15px;}
+  80%  {margin-left:36px; margin-top:16px;}
+  85%  {margin-left:137px; margin-top:17px;}
+  90%  {margin-left:38px; margin-top:18px;}
+  95%  {margin-left:39px; margin-top:19px;}
+  100% {margin-left:40px; margin-top:20px;} */
 }
 
 @keyframes post3 {
-  0%   {margin-left:0px; margin-top:80px;}
+  from {margin-left:0px; margin-top: 80px}
+  to {margin-left: 50px; margin-top: 130px}
+  /* 0%   {margin-left:0px; margin-top:80px;}
   25%  { margin-left:5px; margin-top:85px;}
   50%  { margin-left:10px; margin-top:90px;}
-  75%  { margin-left:15px; margin-top:95px;}
-  100% { margin-left:20px; margin-top:100px;}
+  75%  { margin-left:15px; margin-top:95px;} */
+  /* 100% { margin-left:20px; margin-top:100px;} */
 }
 @-webkit-keyframes post3 {
-  0%   {margin-left:0px; margin-top:80px;}
+  from {margin-left:0px; margin-top: 80px}
+  to {margin-left: 50px; margin-top: 130px}
+  /* 0%   {margin-left:0px; margin-top:80px;}
   25%  { margin-left:5px; margin-top:85px;}
   50%  { margin-left:10px; margin-top:90px;}
   75%  { margin-left:15px; margin-top:95px;}
-  100% { margin-left:20px; margin-top:100px;}
+  100% { margin-left:20px; margin-top:100px;} */
 }
 
 @keyframes post4 {
-  0%   {margin-left:30px; margin-top:300px;}
+  from {margin-left:30px; margin-top: 300px}
+  to {margin-left: 5px; margin-top: 320px}
+  /* 0%   {margin-left:30px; margin-top:300px;}
   25%  { margin-left:25px; margin-top:305px;}
   50%  { margin-left:20px; margin-top:310px;}
   75%  { margin-left:15px; margin-top:315px;}
-  100% { margin-left:10px; margin-top:320px;}
+  100% { margin-left:10px; margin-top:320px;} */
 }
 @-webkit-keyframes post4 {
-  0%   {margin-left:30px; margin-top:300px;}
+  from {margin-left:30px; margin-top: 300px}
+  to {margin-left: 5px; margin-top: 320px}
+  /* 0%   {margin-left:30px; margin-top:300px;}
   25%  { margin-left:25px; margin-top:305px;}
   50%  { margin-left:20px; margin-top:310px;}
   75%  { margin-left:15px; margin-top:315px;}
-  100% { margin-left:10px; margin-top:320px;}
+  100% { margin-left:10px; margin-top:320px;} */
 }
 
 @keyframes post5 {
-  0%   {margin-left:400px; margin-top:100px;}
+  from {margin-left:400px; margin-top: 100px}
+  to {margin-left: 380px; margin-top: 80px}
+  /* 0%   {margin-left:400px; margin-top:100px;}
   25%  { margin-left:395px; margin-top:95px;}
   50%  { margin-left:390px; margin-top:90px;}
   75%  { margin-left:385px; margin-top:85px;}
-  100% { margin-left:380px; margin-top:80px;}
+  100% { margin-left:380px; margin-top:80px;} */
 }
 @-webkit-keyframes post5 {
-  0%   {margin-left:400px; margin-top:100px;}
+  from {margin-left:400px; margin-top: 100px}
+  to {margin-left: 380px; margin-top: 80px}
+  /* 0%   {margin-left:400px; margin-top:100px;}
   25%  { margin-left:395px; margin-top:95px;}
   50%  { margin-left:390px; margin-top:90px;}
   75%  { margin-left:385px; margin-top:85px;}
-  100% { margin-left:300px; margin-top:80px;}
+  100% { margin-left:300px; margin-top:80px;} */
 }
 
 @keyframes post6 {
-  0%   {margin-left:200px; margin-top:0px;}
+  from {margin-left:20px; margin-top: 0px}
+  to {margin-left: 220px; margin-top: 20px}
+  /* 0%   {margin-left:200px; margin-top:0px;}
   25%  { margin-left:205px; margin-top:5px;}
   50%  { margin-left:210px; margin-top:10px;}
   75%  { margin-left:215px; margin-top:15px;}
-  100% { margin-left:220px; margin-top:20px;}
+  100% { margin-left:220px; margin-top:20px;} */
 }
 @-webkit-keyframes post6 {
-  0%   {margin-left:200px; margin-top:0px;}
+  from {margin-left:20px; margin-top: 0px}
+  to {margin-left: 220px; margin-top: 20px}
+  /* 0%   {margin-left:200px; margin-top:0px;}
   25%  { margin-left:205px; margin-top:5px;}
   50%  { margin-left:210px; margin-top:10px;}
   75%  { margin-left:215px; margin-top:15px;}
-  100% { margin-left:220px; margin-top:20px;}
+  100% { margin-left:220px; margin-top:20px;} */
 }
 
 @keyframes post7 {
-  0%   {margin-left:80px; margin-top:20px;}
-  25%  { margin-left:75px; margin-top:25px;}
+  from {margin-left:80px; margin-top: 20px}
+  to {margin-left: 60px; margin-top: 50px}
+  /* 0%   {margin-left:80px; margin-top:20px;} */
+  /* 25%  { margin-left:75px; margin-top:25px;}
   50%  { margin-left:70px; margin-top:30px;}
   75%  { margin-left:65px; margin-top:35px;}
-  100% { margin-left:60px; margin-top:40px;}
+  100% { margin-left:60px; margin-top:40px;} */
 }
 @-webkit-keyframes post7 {
-  0%   {margin-left:80px; margin-top:20px;}
+  from {margin-left:80px; margin-top: 20px}
+  to {margin-left: 60px; margin-top: 50px}
+  /* 0%   {margin-left:80px; margin-top:20px;}
   25%  { margin-left:75px; margin-top:25px;}
   50%  { margin-left:70px; margin-top:30px;}
   75%  { margin-left:65px; margin-top:35px;}
-  100% { margin-left:60px; margin-top:40px;}
+  100% { margin-left:60px; margin-top:40px;} */
 }
