@@ -48,7 +48,7 @@ class App extends Component {
     this.setState({ loading: true })
     axios.get(`https://public-api.wordpress.com/rest/v1/sites/indexfinger771404303.wordpress.com/posts?tag=` + tag)
       .then((res) => {
-        this.setState({ results: res.data.posts, loading: false })
+        this.setState({ results: res.data.posts, loading: false, page: 1, totalPages: 1 })
       })
   }
 
