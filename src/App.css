@@ -7,6 +7,22 @@ body {
   font-family: 'Montaga', serif;
 }
 
+a {
+  color: black;
+  text-decoration: underline;
+}
+
+a:visited {
+  color: black;
+  text-decoration: underline;
+}
+
+a:hover {
+  color: white;
+  background-color: #89005b;
+  font-style: italic;
+}
+
 .home {
   display: flex;
 }
@@ -36,6 +52,18 @@ body {
 }
 
 .index-tag:hover {
+  text-decoration: underline;
+}
+
+.page-button-wrap {
+  padding-top: 25px;
+  display: flex;
+  justify-content: center;
+}
+
+.page-button {
+  padding-left: 10px;
+  cursor: pointer;
   text-decoration: underline;
 }
 
@@ -123,6 +151,11 @@ body {
 
   body {
     padding: 0px;
+  }
+
+  .page-button-wrap {
+    padding-top: 15px;
+    padding-bottom: 15px;
   }
 
   .index {

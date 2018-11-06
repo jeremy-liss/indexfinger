@@ -9,7 +9,7 @@ const styles = ['post1', 'post2', 'post3', 'post4', 'post5', 'post6', 'post7']
 class App extends Component {
   constructor() {
     super()
-    this.state = { results: [], loading: true, showMenu: false }
+    this.state = { results: [], loading: true, showMenu: false, page: 1 }
     this.filterResults = this.filterResults.bind(this);
   }
 
@@ -21,6 +21,7 @@ class App extends Component {
     axios.get(`https://public-api.wordpress.com/rest/v1/sites/indexfinger771404303.wordpress.com/posts`)
       .then((res) => {
         const results = res.data.posts
+        const totalPages = Math.ceil(res.data.found / res.data.posts.length);
         const tags = []
         results.map((result) => {
           Object.keys(result.tags).map((tag) => {
@@ -30,7 +31,15 @@ class App extends Component {
           })
         })
         tags.sort()
-        this.setState({ results, tags, loading: false })
+        this.setState({ results, tags, loading: false, totalPages })
+      })
+  }
+
+  changePage(page) {
+    this.setState({ loading: true })
+    axios.get(`https://public-api.wordpress.com/rest/v1/sites/indexfinger771404303.wordpress.com/posts?page=` + page)
+      .then((res) => {
+        this.setState({ results: res.data.posts, page, loading: false })
       })
   }
 
@@ -49,9 +58,13 @@ class App extends Component {
   }
 
   render() {
+
     if (this.state.loading) {
       return <div>loading</div>
     }
+
+    const nextPage = this.state.page + 1;
+    const previousPage = this.state.page - 1;
 
     return (
       <div>
@@ -73,19 +86,26 @@ class App extends Component {
                     <img src={result.featured_image} className="post-image"/>
                     <h1 className="post-title">{result.title}</h1>
                     <div dangerouslySetInnerHTML={{ __html: result.content }} />
-                    <div className="post-tags">
+                    {tags.length > 0 && <div className="post-tags">
                       Index:
                       {tags.map((tag, j) => {
                         return (
                           <div key={j} className="post-tags-tag" onClick={() => this.filterResults(tag)}>{j+1 === tags.length? tag : tag + ', '}</div>
                         )
                       })}
-                    </div>
+                    </div>}
                   </div>
                 )
               })}
             </div>
+
+            <div className='page-button-wrap'>
+              {this.state.page > 1 && <div onClick={() => this.changePage(previousPage)} className='page-button'>Previous Page</div>}
+              {this.state.page < this.state.totalPages && <div onClick={() => this.changePage(nextPage)} className='page-button'>Next Page</div>}
+            </div>
+
           </div>
+
           <div className="index">
             <h4>Index:</h4>
             {this.state.tags.map((tag, i) => {
@@ -94,6 +114,7 @@ class App extends Component {
               )
             })}
           </div>
+
           {this.state.showMenu && <div className="mobile-menu">
             <div className="mobile-index">
               <div className="mobile-menu-header">
