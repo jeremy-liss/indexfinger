@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import './App.css';
 import axios from 'axios';
+
+import Moon from './Moon.js'
 
 import './App.css';
 
@@ -23,8 +24,8 @@ class App extends Component {
         const results = res.data.posts
         const totalPages = Math.ceil(res.data.found / res.data.posts.length);
         const tags = []
-        results.map((result) => {
-          Object.keys(result.tags).map((tag) => {
+        results.forEach((result) => {
+          Object.keys(result.tags).forEach((tag) => {
             if (!tags.includes(tag)) {
               tags.push(tag)
             }
@@ -71,6 +72,7 @@ class App extends Component {
         <div className="home">
           <div className="content">
             <div style={{ display: 'flex' }}><i className="fas fa-bars hamburger" onClick={() => this.toggleMenu()}></i></div>
+            <Moon />              
             <div className="title" onClick={() => this.getAllPosts()}>Index Finger</div>
             <div className="posts">
               {this.state.results.map((result, i) => {

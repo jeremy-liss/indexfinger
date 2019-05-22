@@ -41,6 +41,17 @@ a:hover {
   color: white;
   text-align: center;
   cursor: pointer;
+  position: relative;
+}
+
+.moon {
+  position: absolute;
+  z-index: 2;
+  top: 15px;
+}
+
+.moon-image {
+  padding: 5px 0px;
 }
 
 .index {
