@@ -71,9 +71,13 @@ class App extends Component {
       <div>
         <div className="home">
           <div className="content">
-            <div style={{ display: 'flex' }}><i className="fas fa-bars hamburger" onClick={() => this.toggleMenu()}></i></div>
-            <Moon />              
-            <div className="title" onClick={() => this.getAllPosts()}>Index Finger</div>
+            <div className="mobile-bar">
+              <i className="fas fa-bars hamburger" onClick={() => this.toggleMenu()}></i>
+            </div>
+            <div className="topbar" onClick={() => this.getAllPosts()}>
+              <Moon size={70} />
+              <h1 className="title">Index Finger</h1>
+            </div>
             <div className="posts">
               {this.state.results.map((result, i) => {
                 let size

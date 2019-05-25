@@ -35,23 +35,46 @@ a:hover {
   width: 90%;
 }
 
+.mobile-bar {
+  display: none;
+}
+
+.topbar {
+  height: 150px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
 .title {
+  width: 85%;
+  margin: 0;
   font-family: 'Yatra One', cursive;
   font-size: 60px;
   color: white;
   text-align: center;
   cursor: pointer;
-  position: relative;
+}
+
+.moon-load {
+  width: 90px;
 }
 
 .moon {
-  position: absolute;
   z-index: 2;
-  top: 15px;
+  text-align: center;
 }
 
 .moon-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   padding: 5px 0px;
+}
+
+.moon-mobile-menu {
+  display: none;
 }
 
 .index {
@@ -81,6 +104,7 @@ a:hover {
 .posts {
   display: flex;
   flex-wrap: wrap;
+  margin-right: 10px;
 }
 
 .post {
@@ -158,10 +182,36 @@ a:hover {
   animation-name: post7;
 }
 
+/* MOBILE STYLES */
+
 @media (max-width: 700px) {
 
   body {
     padding: 0px;
+  }
+
+  .mobile-bar {
+    display: initial;
+  }
+
+  .topbar {
+    height: auto;
+  }
+
+  .title {
+    width: 100%;
+  }
+
+  .moon-load {
+    display: none;
+  }
+
+  .moon {
+    display: none;
+  }
+
+  .moon-mobile-menu {
+    display: initial;
   }
 
   .page-button-wrap {
