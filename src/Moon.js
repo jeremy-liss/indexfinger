@@ -15,8 +15,10 @@ class Moon extends Component {
   }
 
   componentDidMount() {
-    getMoon(this.props.size, (moon) => {
-      this.setState({ moon, loading: false})
+    getMoon(this.props.size, (moon, success) => {
+      if(success) {
+        this.setState({ moon, loading: false})
+      }
     })
   }
 
