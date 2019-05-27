@@ -17,7 +17,7 @@ const getMoon = (size, callback) => {
   for (let i in configMoon){
     gets.push(i+"="+encodeURIComponent(configMoon[i]))
   }
-  const url = "https://www.icalendar37.net/lunar/api/?"+gets.join("&")
+  const url = "http://www.icalendar37.net/lunar/api/?"+gets.join("&")
 
   axios.get(url)
     .then((res) => {

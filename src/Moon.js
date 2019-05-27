@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import axios from 'axios';
 import moment from 'moment';
 
 import getMoon  from './helpers/moon.js'
@@ -29,20 +28,32 @@ class Moon extends Component {
     }
 
     const moon = this.state.moon;
-    const today = new Date;
+    const today = new Date();
     const day = today.getDate();
-    const dayWeek = moon.phase[day].dayWeek
+
+    const thumbSvg = moon.phase[day].svg.replace(`<a xlink:href="http://www.icalendar37.net/lunar/app/" target="_blank">`, '').replace('</a>', '');
 
     return (
       <>
-        <div className="moon">
-          <div>{moment(today).format('dddd')}</div>
-          <div>{moment(today).format('DD MMMM YYYY')}</div>
-          <div className="moon-image" dangerouslySetInnerHTML={{ __html: moon.phase[day].svg }}></div>
-          <div>{moon.phase[day].phaseName + " "+ Math.round(moon.phase[day].lighting) + "%"}</div>
-        </div>
-
-        <div className="moon-mobile-menu" dangerouslySetInnerHTML={{ __html: moon.phase[day].svg }}></div>
+        { this.props.desktop &&
+          <div className="moon">
+            <div>{moment(today).format('dddd')}</div>
+            <div>{moment(today).format('DD MMMM YYYY')}</div>
+            <div className="moon-image" dangerouslySetInnerHTML={{ __html: moon.phase[day].svg }}></div>
+            <div>{moon.phase[day].phaseName + " "+ Math.round(moon.phase[day].lighting) + "%"}</div>
+          </div>
+        }
+        { this.props.thumbnail &&
+          <div className="moon-mobile-menu" onClick={() => this.props.toggleMoonPopup(true)} dangerouslySetInnerHTML={{ __html: thumbSvg }}></div>
+        }
+        { this.props.popup &&
+          <div className="moon-popup">
+            <h1 className="moon-popup-text">{moment(today).format('dddd')}</h1>
+            <h1 className="moon-popup-text">{moment(today).format('DD MMMM YYYY')}</h1>
+            <div className="moon-image" dangerouslySetInnerHTML={{ __html: moon.phase[day].svg }}></div>
+            <h1 className="moon-popup-text">{moon.phase[day].phaseName + " "+ Math.round(moon.phase[day].lighting) + "%"}</h1>
+          </div>
+        }
       </>
     )
   }

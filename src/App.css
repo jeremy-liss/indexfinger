@@ -3,7 +3,7 @@
 }
 
 body {
-  padding: 40px;
+  padding: 10px 40px 40px 40px;
   font-family: 'Montaga', serif;
 }
 
@@ -192,6 +192,11 @@ a:hover {
 
   .mobile-bar {
     display: initial;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+    margin: 10px 0px 0px 13px;
   }
 
   .topbar {
@@ -230,9 +235,7 @@ a:hover {
 
   .hamburger {
     display: inline;
-    margin-left: auto;
     font-size: 30px;
-    margin-top: 20px;
   }
 
   .post1, .post2, .post3, .post4, .post5, .post6, .post7, .small, .medium, .large  {
@@ -274,6 +277,32 @@ a:hover {
     padding-top: 10px;
     font-size: 20px;
     background-color: white;
+  }
+
+  .moon-popup {
+    padding: 20px;
+    height: 100vh;
+  }
+
+  .moon-popup-header {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .moon-popup-close {
+    font-size: 25px;
+    margin-right: 20px;
+    margin-top: 10px;
+  }
+
+  .moon-popup-text {
+    margin: 0;
+    font-family: 'Yatra One', cursive;
+    font-size: 53px;
+    line-height: 55px;
+    color: white;
+    text-align: center;
+    cursor: pointer;
   }
 }
 
