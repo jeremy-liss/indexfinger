@@ -56,8 +56,10 @@ class App extends Component {
   toggleMenu(toggle) {
     if (toggle === false) {
       document.body.style.overflow = 'initial';
+      document.documentElement.style.overflow = 'initial';
     } else {
       document.body.style.overflow = 'hidden';
+      document.documentElement.style.overflow = 'hidden';
     }
     this.setState({ showMenu: toggle })
   }
@@ -65,8 +67,10 @@ class App extends Component {
   toggleMoonPopup(toggle) {
     if (toggle === false) {
       document.body.style.overflow = 'initial';
+      document.documentElement.style.overflow = 'initial';
     } else {
       document.body.style.overflow = 'hidden';
+      document.documentElement.style.overflow = 'hidden';
     }
     this.setState({ showMoonPopup: toggle })
   }
