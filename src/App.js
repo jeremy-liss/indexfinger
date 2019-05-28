@@ -10,7 +10,7 @@ const styles = ['post1', 'post2', 'post3', 'post4', 'post5', 'post6', 'post7']
 class App extends Component {
   constructor() {
     super()
-    this.state = { results: [], loading: true, showMenu: false, showMoonPopup: false, page: 1 }
+    this.state = { results: [], loading: true, showMenu: false, showMoonPopup: false, popupMoonLoading: true, page: 1 }
     this.filterResults = this.filterResults.bind(this);
   }
 
@@ -53,9 +53,13 @@ class App extends Component {
       })
   }
 
-  toggleMenu() {
-    const showMenu = !this.state.showMenu
-    this.setState({ showMenu })
+  toggleMenu(toggle) {
+    if (toggle === false) {
+      document.body.style.overflow = 'initial';
+    } else {
+      document.body.style.overflow = 'hidden';
+    }
+    this.setState({ showMenu: toggle })
   }
 
   toggleMoonPopup(toggle) {
@@ -70,7 +74,7 @@ class App extends Component {
   render() {
 
     if (this.state.loading) {
-      return <div>loading</div>
+      return <div className="loading">loading...</div>
     }
 
     const nextPage = this.state.page + 1;
@@ -81,8 +85,10 @@ class App extends Component {
         <div className="home">
           <div className="content">
             <div className="mobile-bar">
-              <Moon size={30} thumbnail toggleMoonPopup={(toggle) => this.toggleMoonPopup(toggle)}/>
-              <i className="fas fa-bars hamburger" onClick={() => this.toggleMenu()}></i>
+              <div className="mobile-moon-box">
+                <Moon size={30} thumbnail toggleMoonPopup={(toggle) => this.toggleMoonPopup(toggle)}/>
+              </div>
+              <i className="fas fa-bars hamburger" onClick={() => this.toggleMenu(true)}></i>
             </div>
             <div className="topbar" onClick={() => this.getAllPosts()}>
               <Moon size={70} desktop />
@@ -136,11 +142,11 @@ class App extends Component {
               <div className="mobile-index">
                 <div className="mobile-menu-header">
                   <div className="mobile-index-title">Index:</div>
-                  <i className="fas fa-times mobile-menu-close" onClick={() => this.toggleMenu()}></i>
+                  <i className="fas fa-times mobile-menu-close" onClick={() => this.toggleMenu(false)}></i>
                 </div>
                 {this.state.tags.map((tag) => {
                   return (
-                    <div className="mobile-index-tag" onClick={() => {this.filterResults(tag); this.toggleMenu()}}>{tag}</div>
+                    <div className="mobile-index-tag" onClick={() => {this.filterResults(tag); this.toggleMenu(false)}}>{tag}</div>
                   )
                 })}
               </div>
@@ -148,10 +154,13 @@ class App extends Component {
           }
           { this.state.showMoonPopup &&
             <div className="mobile-menu">
-              <div className="moon-popup-header">
-                <i className="fas fa-times moon-popup-close" onClick={() => this.toggleMoonPopup(false)}></i>
+              <div  className="moon-popup">
+                <div className="moon-popup-header">
+                  <i className="fas fa-times moon-popup-close" onClick={() => { this.toggleMoonPopup(false); this.setState({ popupMoonLoading: true }) }}></i>
+                </div>
+                {this.state.popupMoonLoading && <div className="loading">loading...</div>}
+                <Moon size={100} popup moonLoaded={() => this.setState({ popupMoonLoading: false })} />
               </div>
-              <Moon size={100} popup />
             </div>
           }
         </div>

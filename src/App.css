@@ -23,6 +23,11 @@ a:hover {
   font-style: italic;
 }
 
+.loading {
+  text-align: center;
+  margin-top: 40px;
+}
+
 .home {
   display: flex;
 }
@@ -215,6 +220,10 @@ a:hover {
     display: none;
   }
 
+  .mobile-moon-box {
+    width: 30px;
+  }
+
   .moon-mobile-menu {
     display: initial;
   }
@@ -269,8 +278,10 @@ a:hover {
   }
 
   .mobile-index {
+    height: 100vh;
     padding: 20px;
     background-color: white;
+    overflow: scroll;
   }
 
   .mobile-index-tag {
@@ -291,8 +302,6 @@ a:hover {
 
   .moon-popup-close {
     font-size: 25px;
-    margin-right: 20px;
-    margin-top: 10px;
   }
 
   .moon-popup-text {

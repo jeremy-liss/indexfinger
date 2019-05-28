@@ -17,6 +17,9 @@ class Moon extends Component {
     getMoon(this.props.size, (moon, success) => {
       if(success) {
         this.setState({ moon, loading: false })
+        if (this.props.popup && this.props.moonLoaded) {
+          this.props.moonLoaded();
+        }
       }
     })
   }
@@ -47,7 +50,7 @@ class Moon extends Component {
           <div className="moon-mobile-menu" onClick={() => this.props.toggleMoonPopup(true)} dangerouslySetInnerHTML={{ __html: thumbSvg }}></div>
         }
         { this.props.popup &&
-          <div className="moon-popup">
+          <div>
             <h1 className="moon-popup-text">{moment(today).format('dddd')}</h1>
             <h1 className="moon-popup-text">{moment(today).format('DD MMMM YYYY')}</h1>
             <div className="moon-image" dangerouslySetInnerHTML={{ __html: moon.phase[day].svg }}></div>
