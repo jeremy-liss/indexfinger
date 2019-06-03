@@ -2,9 +2,17 @@
   background-color: #43858e;
 }
 
+html {
+  position: relative;
+  height: 100%;
+}
+
+
 body {
-  padding: 40px;
+  padding: 10px 40px 40px 40px;
   font-family: 'Montaga', serif;
+  position: relative;
+  height: 100%;
 }
 
 a {
@@ -23,6 +31,11 @@ a:hover {
   font-style: italic;
 }
 
+.loading {
+  text-align: center;
+  margin-top: 40px;
+}
+
 .home {
   display: flex;
 }
@@ -35,23 +48,46 @@ a:hover {
   width: 90%;
 }
 
+.mobile-bar {
+  display: none;
+}
+
+.topbar {
+  height: 150px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
 .title {
+  width: 85%;
+  margin: 0;
   font-family: 'Yatra One', cursive;
   font-size: 60px;
   color: white;
   text-align: center;
   cursor: pointer;
-  position: relative;
+}
+
+.moon-load {
+  width: 90px;
 }
 
 .moon {
-  position: absolute;
   z-index: 2;
-  top: 15px;
+  text-align: center;
 }
 
 .moon-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   padding: 5px 0px;
+}
+
+.moon-mobile-menu {
+  display: none;
 }
 
 .index {
@@ -81,6 +117,7 @@ a:hover {
 .posts {
   display: flex;
   flex-wrap: wrap;
+  margin-right: 10px;
 }
 
 .post {
@@ -158,10 +195,45 @@ a:hover {
   animation-name: post7;
 }
 
+/* MOBILE STYLES */
+
 @media (max-width: 700px) {
 
   body {
     padding: 0px;
+  }
+
+  .mobile-bar {
+    display: initial;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+    margin: 10px 0px 0px 13px;
+  }
+
+  .topbar {
+    height: auto;
+  }
+
+  .title {
+    width: 100%;
+  }
+
+  .moon-load {
+    display: none;
+  }
+
+  .moon {
+    display: none;
+  }
+
+  .mobile-moon-box {
+    width: 30px;
+  }
+
+  .moon-mobile-menu {
+    display: initial;
   }
 
   .page-button-wrap {
@@ -180,9 +252,7 @@ a:hover {
 
   .hamburger {
     display: inline;
-    margin-left: auto;
     font-size: 30px;
-    margin-top: 20px;
   }
 
   .post1, .post2, .post3, .post4, .post5, .post6, .post7, .small, .medium, .large  {
@@ -216,14 +286,40 @@ a:hover {
   }
 
   .mobile-index {
+    height: 100vh;
     padding: 20px;
     background-color: white;
+    overflow: scroll;
   }
 
   .mobile-index-tag {
     padding-top: 10px;
     font-size: 20px;
     background-color: white;
+  }
+
+  .moon-popup {
+    padding: 20px;
+    height: 100vh;
+  }
+
+  .moon-popup-header {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .moon-popup-close {
+    font-size: 25px;
+  }
+
+  .moon-popup-text {
+    margin: 0;
+    font-family: 'Yatra One', cursive;
+    font-size: 53px;
+    line-height: 55px;
+    color: white;
+    text-align: center;
+    cursor: pointer;
   }
 }
 
