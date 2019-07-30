@@ -33,7 +33,9 @@ class App extends Component {
     .then((res) => {
       const tags = [];
       res.data.tags.map((tag) => {
-        tags.push(tag.slug)
+        if (tag.post_count > 0) {          
+          tags.push(tag.slug)
+        }
       })
       this.setState({ tags: tags.sort()})
     })
