@@ -16,6 +16,7 @@ class App extends Component {
 
   componentDidMount() {
     this.getAllPosts()
+    this.getTags()
   }
 
   getAllPosts() {
@@ -23,17 +24,19 @@ class App extends Component {
       .then((res) => {
         const results = res.data.posts
         const totalPages = Math.ceil(res.data.found / res.data.posts.length);
-        const tags = []
-        results.forEach((result) => {
-          Object.keys(result.tags).forEach((tag) => {
-            if (!tags.includes(tag)) {
-              tags.push(tag)
-            }
-          })
-        })
-        tags.sort()
-        this.setState({ results, tags, loading: false, totalPages })
+        this.setState({ results, loading: false, totalPages })
       })
+  }
+
+  getTags() {
+    axios.get(`https://public-api.wordpress.com/rest/v1/sites/indexfinger771404303.wordpress.com/tags?number=1000`)
+    .then((res) => {
+      const tags = [];
+      res.data.tags.map((tag) => {
+        tags.push(tag.slug)
+      })
+      this.setState({ tags: tags.sort()})
+    })
   }
 
   changePage(page) {
