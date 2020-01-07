@@ -10,14 +10,24 @@ import './App.css';
 const styles = ['post1', 'post2', 'post3', 'post4', 'post5', 'post6', 'post7']
 
 class Posts extends Component {
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
     this.state = { results: [], loading: true, page: 1 }
     this.filterResults = this.filterResults.bind(this);
   }
 
   componentDidMount() {
-    this.getAllPosts()
+    if (this.props.match.params && this.props.match.params.index) {
+      this.filterResults(this.props.match.params.index)
+    } else this.getAllPosts()
+  }
+
+  componentDidUpdate(prevProps) {
+    if (this.props.match.params && this.props.match.params.index) {
+      if (prevProps.match.params.index !== this.props.match.params.index) {
+        this.filterResults(this.props.match.params.index)
+      }
+    } 
   }
 
   getAllPosts() {
@@ -69,7 +79,7 @@ class Posts extends Component {
             return (
               <div key={i} className={styles[Math.floor(Math.random() * styles.length)] + ' ' + size}>
                 <img src={result.featured_image} className="post-image" alt="" />
-                <h1 className="post-title" onClick={() => history.push(`/${result.slug}`)}>{result.title}</h1>
+                <h1 className="post-title-clickable" onClick={() => history.push(`/${result.slug}`)}>{result.title}</h1>
                 <div dangerouslySetInnerHTML={{ __html: result.content }} />
                 {tags.length > 0 && <div className="post-tags">
                   Index:

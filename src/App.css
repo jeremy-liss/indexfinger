@@ -38,6 +38,7 @@ a:hover {
 
 .home {
   display: flex;
+  padding-bottom: 25px;
 }
 
 .hamburger {
@@ -104,7 +105,6 @@ a:hover {
 
 .page-button-wrap {
   padding-top: 25px;
-  padding-bottom: 25px;
   display: flex;
   justify-content: center;
 }
@@ -125,6 +125,10 @@ a:hover {
   width: 20%;
   padding-left: 30px;
   padding-bottom: 30px;
+}
+
+.post-title-clickable {
+  cursor: pointer;
 }
 
 .post-image {

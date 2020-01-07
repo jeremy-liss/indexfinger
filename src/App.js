@@ -16,7 +16,7 @@ class App extends Component {
   constructor() {
     super()
     this.state = { results: [], loading: true, showMenu: false, showMoonPopup: false, popupMoonLoading: true, page: 1 }
-    this.filterResults = this.filterResults.bind(this);
+    // this.filterResults = this.filterResults.bind(this);
   }
 
   componentDidMount() {
@@ -36,14 +36,14 @@ class App extends Component {
     })
   }
 
-  filterResults(filter) {
-    const tag = filter.replace(/ /g, "-");
-    this.setState({ loading: true })
-    axios.get(`https://public-api.wordpress.com/rest/v1/sites/indexfinger771404303.wordpress.com/posts?tag=` + tag)
-      .then((res) => {
-        this.setState({ results: res.data.posts, loading: false, page: 1, totalPages: 1 })
-      })
-  }
+  // filterResults(filter) {
+  //   const tag = filter.replace(/ /g, "-");
+  //   this.setState({ loading: true })
+  //   axios.get(`https://public-api.wordpress.com/rest/v1/sites/indexfinger771404303.wordpress.com/posts?tag=` + tag)
+  //     .then((res) => {
+  //       this.setState({ results: res.data.posts, loading: false, page: 1, totalPages: 1 })
+  //     })
+  // }
 
   toggleMenu(toggle) {
     if (toggle === false) {
@@ -90,6 +90,7 @@ class App extends Component {
             <div className="posts">
               <Router history={history}>
                 <Switch>
+                  <Route path="/index/:index" component={Posts} />
                   <Route path="/:post" component={Post} />
                   <Route path="/" component={Posts} />
                 </Switch>
@@ -102,7 +103,7 @@ class App extends Component {
             <h4>Index:</h4>
             {this.state.tags.map((tag, i) => {
               return (
-                <div key={i} className="index-tag" onClick={() => this.filterResults(tag)}>{tag}</div>
+                <div key={i} className="index-tag" onClick={() => history.push(`/index/${tag}`)}>{tag}</div>
               )
             })}
           </div>
@@ -116,7 +117,7 @@ class App extends Component {
                 </div>
                 {this.state.tags.map((tag) => {
                   return (
-                    <div className="mobile-index-tag" onClick={() => {this.filterResults(tag); this.toggleMenu(false)}}>{tag}</div>
+                    <div className="mobile-index-tag" onClick={() => {history.push(`/index/${tag}`); this.toggleMenu(false)}}>{tag}</div>
                   )
                 })}
               </div>

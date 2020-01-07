@@ -8,6 +8,7 @@ const styles = ['post1', 'post2', 'post3', 'post4', 'post5', 'post6', 'post7']
 class Post extends Component {
   constructor() {
     super()
+    window.scrollTo(0, 0);
     this.state = { post: null, loading: true }
   }
 
