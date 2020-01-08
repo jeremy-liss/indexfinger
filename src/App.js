@@ -2,21 +2,19 @@ import React, { Component } from 'react';
 import { Route, Router, Switch } from 'react-router-dom';
 import axios from 'axios';
 
+import AllPosts from './AllPosts';
+import IndexPosts from './IndexPosts';
 import Moon from './Moon';
 import Post from './Post';
-import Posts from './Posts';
 
 import history from './helpers/history';
 
 import './App.css';
 
-const styles = ['post1', 'post2', 'post3', 'post4', 'post5', 'post6', 'post7']
-
 class App extends Component {
   constructor() {
     super()
-    this.state = { results: [], loading: true, showMenu: false, showMoonPopup: false, popupMoonLoading: true, page: 1 }
-    // this.filterResults = this.filterResults.bind(this);
+    this.state = { loading: true, showMenu: false, showMoonPopup: false, popupMoonLoading: true }
   }
 
   componentDidMount() {
@@ -27,7 +25,7 @@ class App extends Component {
     axios.get(`https://public-api.wordpress.com/rest/v1/sites/indexfinger771404303.wordpress.com/tags?number=1000`)
     .then((res) => {
       const tags = [];
-      res.data.tags.map((tag) => {
+      res.data.tags.forEach((tag) => {
         if (tag.post_count > 0) {
           tags.push(tag.slug)
         }
@@ -35,15 +33,6 @@ class App extends Component {
       this.setState({ tags: tags.sort(), loading: false })
     })
   }
-
-  // filterResults(filter) {
-  //   const tag = filter.replace(/ /g, "-");
-  //   this.setState({ loading: true })
-  //   axios.get(`https://public-api.wordpress.com/rest/v1/sites/indexfinger771404303.wordpress.com/posts?tag=` + tag)
-  //     .then((res) => {
-  //       this.setState({ results: res.data.posts, loading: false, page: 1, totalPages: 1 })
-  //     })
-  // }
 
   toggleMenu(toggle) {
     if (toggle === false) {
@@ -90,9 +79,9 @@ class App extends Component {
             <div className="posts">
               <Router history={history}>
                 <Switch>
-                  <Route path="/index/:index" component={Posts} />
+                  <Route path="/index/:index" component={IndexPosts} />
                   <Route path="/:post" component={Post} />
-                  <Route path="/" component={Posts} />
+                  <Route path="/" component={AllPosts} />
                 </Switch>
               </Router>
             </div>
