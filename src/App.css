@@ -250,29 +250,6 @@
     background-color: white;
   }
 
-  .moon-popup {
-    padding: 20px;
-    height: 100vh;
-  }
-
-  .moon-popup-header {
-    display: flex;
-    justify-content: flex-end;
-  }
-
-  .moon-popup-close {
-    font-size: 25px;
-  }
-
-  .moon-popup-text {
-    margin: 0;
-    font-family: 'Yatra One', cursive;
-    font-size: 53px;
-    line-height: 55px;
-    color: white;
-    text-align: center;
-    cursor: pointer;
-  }
 }
 
 @keyframes post1 {
