@@ -1,0 +1,61 @@
+.moon-load {
+  width: 90px;
+}
+
+.moon {
+  z-index: 2;
+  text-align: center;
+}
+
+.moon-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px 0px;
+}
+
+.moon-mobile-menu {
+  display: none;
+}
+
+@media (max-width: 700px) {
+  .moon-load {
+    display: none;
+  }
+
+  .moon {
+    display: none;
+  }
+
+  .mobile-moon-box {
+    width: 30px;
+  }
+
+  .moon-mobile-menu {
+    display: initial;
+  }
+  
+  .moon-popup {
+    padding: 20px;
+    height: 100vh;
+  }
+
+  .moon-popup-header {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .moon-popup-close {
+    font-size: 25px;
+  }
+
+  .moon-popup-text {
+    margin: 0;
+    font-family: 'Yatra One', cursive;
+    font-size: 53px;
+    line-height: 55px;
+    color: white;
+    text-align: center;
+    cursor: pointer;
+  }
+}
