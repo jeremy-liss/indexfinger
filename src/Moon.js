@@ -3,7 +3,7 @@ import moment from 'moment';
 
 import getMoon  from './helpers/moon.js'
 
-import './App.css';
+import './Moon.css';
 
 class Moon extends Component {
 
