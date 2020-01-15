@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
+import history from './helpers/history';
+
 import './App.css';
 
 const styles = ['post1', 'post2', 'post3', 'post4', 'post5', 'post6', 'post7']
@@ -36,11 +38,22 @@ class Post extends Component {
       size = 'medium'
     }
 
+    const tags = Object.keys(this.state.post.tags)
+
     return (
       <div className={styles[Math.floor(Math.random() * styles.length)] + ' ' + size}>
         <img src={this.state.post.featured_image} className="post-image" alt="" />
         <h1 className="post-title">{this.state.post.title}</h1>
         <div dangerouslySetInnerHTML={{ __html: this.state.post.content }} />
+
+        {tags.length > 0 && <div className="post-tags">
+          Index:
+          {tags.map((tag, j) => {
+            return (
+              <div key={j} className="post-tags-tag" onClick={() => history.push(`/index/${tag}`)}>{j+1 === tags.length? tag : tag + ', '}</div>
+            )
+          })}
+        </div>}
       </div>
     )
   }
